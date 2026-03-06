@@ -1,0 +1,170 @@
+/* ── Floating Mist ───────────────────────────────── */
+@keyframes mistDrift {
+  0% {
+    transform: translateX(-20%) scaleX(1);
+    opacity: 0.07;
+  }
+
+  50% {
+    transform: translateX(10%) scaleX(1.08);
+    opacity: 0.13;
+  }
+
+  100% {
+    transform: translateX(-20%) scaleX(1);
+    opacity: 0.07;
+  }
+}
+
+@keyframes mistDriftAlt {
+  0% {
+    transform: translateX(20%) scaleX(1.05);
+    opacity: 0.05;
+  }
+
+  50% {
+    transform: translateX(-15%) scaleX(0.95);
+    opacity: 0.11;
+  }
+
+  100% {
+    transform: translateX(20%) scaleX(1.05);
+    opacity: 0.05;
+  }
+}
+
+/* ── Logo Glow Pulse ─────────────────────────────── */
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 18px #FFD70077) drop-shadow(0 0 40px #FFD70033);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 36px #FFD700cc) drop-shadow(0 0 80px #FFD70066);
+  }
+}
+
+/* ── Sparkle Burst pieces ────────────────────────── */
+@keyframes sparkleOrbit {
+  0% {
+    transform: rotate(var(--angle)) translateX(0px) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(var(--angle)) translateX(120px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* ── Mouse sparkle fade ──────────────────────────── */
+@keyframes sparkFade {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0) rotate(200deg);
+    opacity: 0;
+  }
+}
+
+/* ── Number roll ─────────────────────────────────── */
+@keyframes digitRoll {
+  0% {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* ── Float drift ─────────────────────────────────── */
+@keyframes floatDrift {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ── Button shimmer ──────────────────────────────── */
+@keyframes shimmer {
+  0% {
+    background-position: -300% center;
+  }
+
+  100% {
+    background-position: 300% center;
+  }
+}
+
+/* ── Star twinkle ────────────────────────────────── */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* ── Utility Classes ─────────────────────────────── */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.glow-logo {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.float-drift {
+  animation: floatDrift 6s ease-in-out infinite;
+}
+
+.mist-layer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 130% 45% at 50% 105%, #4b2a8033, transparent);
+  animation: mistDrift 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mist-layer-2 {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 110% 35% at 20% 90%, #1a0f2e55, transparent);
+  animation: mistDriftAlt 25s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.digit-animate {
+  animation: digitRoll 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.shimmer-btn {
+  background: linear-gradient(90deg, #a16207, #FFD700, #FFED8A, #FFD700, #a16207);
+  background-size: 300% auto;
+  animation: shimmer 3s linear infinite;
+}
