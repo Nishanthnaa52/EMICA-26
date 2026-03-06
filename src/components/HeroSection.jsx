@@ -123,6 +123,42 @@ export default function HeroSection() {
                 <MagicalButton variant="secondary" onClick={() => setModal('explore')}>
                     Explore Events →
                 </MagicalButton>
+
+                {/* View Brochure — sits on its own row below */}
+                <div style={{ flexBasis: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <motion.button
+                        whileHover={{ scale: 1.05, boxShadow: '0 0 24px rgba(255, 215, 0, 0.35)' }}
+                        whileTap={{ scale: 0.97 }}
+                        onClick={() => setModal('brochure')}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            padding: '10px 28px',
+                            borderRadius: '30px',
+                            border: '1px solid rgba(255, 215, 0, 0.3)',
+                            backgroundColor: 'rgba(255, 215, 0, 0.08)',
+                            backdropFilter: 'blur(10px)',
+                            color: '#FFD700',
+                            fontFamily: "'Inter', sans-serif",
+                            fontSize: 'clamp(0.72rem, 1.4vw, 0.82rem)',
+                            fontWeight: 500,
+                            letterSpacing: '0.1em',
+                            textTransform: 'uppercase',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s ease',
+                        }}
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg>
+                        View Brochure
+                    </motion.button>
+                </div>
             </motion.div>
 
             {/* ── Bottom fade ── */}
@@ -139,44 +175,6 @@ export default function HeroSection() {
                 }}
             />
 
-            {/* ── Scroll hint ── */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={revealDone ? { opacity: 0.45 } : {}}
-                transition={{ duration: 1.2, delay: 1 }}
-                style={{
-                    position: 'absolute',
-                    bottom: 28,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    zIndex: 3,
-                }}
-            >
-                <motion.div
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-                    style={{
-                        width: 24,
-                        height: 40,
-                        border: '1.5px solid #FFD70055',
-                        borderRadius: 12,
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        justifyContent: 'center',
-                        padding: '6px 0',
-                    }}
-                >
-                    <div
-                        style={{
-                            width: 4,
-                            height: 8,
-                            borderRadius: 2,
-                            backgroundColor: '#FFD70088',
-                        }}
-                    />
-                </motion.div>
-            </motion.div>
-
             {/* ── Coming Soon Modals ── */}
             <AnimatePresence>
                 {modal === 'register' && (
@@ -190,6 +188,13 @@ export default function HeroSection() {
                     <ComingSoonModal
                         key="explore-modal"
                         title="Event Explorer"
+                        onClose={() => setModal(null)}
+                    />
+                )}
+                {modal === 'brochure' && (
+                    <ComingSoonModal
+                        key="brochure-modal"
+                        title="Brochure"
                         onClose={() => setModal(null)}
                     />
                 )}
