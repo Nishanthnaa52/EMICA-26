@@ -111,24 +111,6 @@ The output will be in the `dist/` folder.
 
 ---
 
-## 🗺️ Roadmap
-
-- [ ] Registration form integration
-- [ ] Event listing page
-- [ ] Schedule / timeline section
-- [ ] Gallery section
-- [ ] Contact & venue section
-- [ ] Mobile app deep link support
-
----
-
 ## 🤝 Contributing
 
-Pull requests are welcome! Please open an issue first to discuss what you'd like to change.
-
----
-
-## 📜 License
-
-This project is maintained by the **EMICA'26 team**.  
-© 2026 EMICA'26. All rights reserved.
+Pull requests are welcome! Please open an issue first to discuss what you'd like to change. only for TCE students 

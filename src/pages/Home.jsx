@@ -10,6 +10,7 @@ export default function Home() {
                 minHeight: '100dvh',
                 backgroundColor: '#0b0b14',
                 overflowX: 'hidden',
+                paddingTop: '120px',
             }}
         >
             {/* Magical particle background */}
