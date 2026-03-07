@@ -10,7 +10,7 @@ const DEVELOPERS = [
         role: 'Web Developer',
         department: 'IT',
         image: loganathanImg,
-        instagramLink: 'https://www.instagram.com/loga_be',
+        instagramLink: 'https://www.instagram.com/loga.____?igsh=MXdxZnlicGp6aWozeQ==',
         linkedinLink: 'https://www.linkedin.com/in/loganathan-s-24a0032a3/',
         portfolioLink: 'https://loga-25.vercel.app/',
     },

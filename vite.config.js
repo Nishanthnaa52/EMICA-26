@@ -7,4 +7,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  // Ensure all routes fall back to index.html for SPA client-side routing
+  appType: 'spa',
 })

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import LogoReveal from './LogoReveal';
 import CountdownTimer from './CountdownTimer';
@@ -40,8 +41,9 @@ function Stars() {
 
 export default function HeroSection() {
     const [revealDone, setRevealDone] = useState(false);
-    // null | 'register' | 'explore'
+    // null | 'register' | 'brochure'
     const [modal, setModal] = useState(null);
+    const navigate = useNavigate();
 
     const fadeUp = (delay = 0) => ({
         initial: { opacity: 0, y: 28 },
@@ -120,7 +122,7 @@ export default function HeroSection() {
                 <MagicalButton variant="primary" onClick={() => setModal('register')}>
                     ✨ Register Now
                 </MagicalButton>
-                <MagicalButton variant="secondary" onClick={() => setModal('explore')}>
+                <MagicalButton variant="secondary" onClick={() => navigate('/events')}>
                     Explore Events →
                 </MagicalButton>
 
@@ -184,13 +186,7 @@ export default function HeroSection() {
                         onClose={() => setModal(null)}
                     />
                 )}
-                {modal === 'explore' && (
-                    <ComingSoonModal
-                        key="explore-modal"
-                        title="Event Explorer"
-                        onClose={() => setModal(null)}
-                    />
-                )}
+
                 {modal === 'brochure' && (
                     <ComingSoonModal
                         key="brochure-modal"
