@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import MagicParticles from '../components/MagicParticles';
+import LocationCard from '../components/LocationCard';
 
 /* ── Reusable animated section card ───────────────── */
 function SectionCard({ title, children, delay = 0 }) {
@@ -153,6 +154,9 @@ export default function About() {
                         like-minded innovators from across the colleges. Prepare to be part of something magical.
                     </p>
                 </SectionCard>
+
+                {/* Location */}
+                <LocationCard delay={0.55} />
             </div>
 
             {/* Bottom glow */}

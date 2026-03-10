@@ -1,6 +1,7 @@
 import MagicParticles from '../components/MagicParticles';
 import HeroSection from '../components/HeroSection';
 import MouseSparkle from '../components/MouseSparkle';
+import LocationCard from '../components/LocationCard';
 
 export default function Home() {
     return (
@@ -21,6 +22,19 @@ export default function Home() {
 
             {/* Hero section */}
             <HeroSection />
+
+            {/* Location Section */}
+            <div
+                style={{
+                    position: 'relative',
+                    zIndex: 10,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    padding: '40px clamp(16px, 5vw, 48px) 80px',
+                }}
+            >
+                <LocationCard />
+            </div>
         </div>
     );
 }

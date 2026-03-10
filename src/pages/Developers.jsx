@@ -3,6 +3,8 @@ import DeveloperCard from '../components/DeveloperCard';
 import MagicParticles from '../components/MagicParticles';
 import nishanthImg from '../assets/devs_profile/Nishanth.jpeg';
 import loganathanImg from '../assets/devs_profile/loganathan.jpeg';
+import LakshanthImg from "../assets/devs_profile/Lakshanth.jpeg";
+import { image } from 'framer-motion/client';
 
 const DEVELOPERS = [
     {
@@ -10,7 +12,7 @@ const DEVELOPERS = [
         role: 'Web Developer',
         department: 'IT',
         image: loganathanImg,
-        instagramLink: 'https://www.instagram.com/loga_be',
+        instagramLink: 'https://www.instagram.com/loga.____?igsh=MXdxZnlicGp6aWozeQ==',
         linkedinLink: 'https://www.linkedin.com/in/loganathan-s-24a0032a3/',
         portfolioLink: 'https://loga-25.vercel.app/',
     },
@@ -23,6 +25,15 @@ const DEVELOPERS = [
         linkedinLink: 'https://www.linkedin.com/in/nishanthnaa52/',
         portfolioLink: 'https://nishanth-portfolio-22.netlify.app/',
     },
+    {
+        name: 'Lakshanth',
+        role: 'All desgin workes',
+        department: "CSE",
+        image: LakshanthImg,
+        instagramLink: 'https://www.instagram.com/chocolate_lux5',
+        linkedinLink: '',
+        portfolioLink: '',
+    }
 ];
 
 export default function Developers() {
