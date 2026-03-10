@@ -98,11 +98,13 @@ export default function HeroSection() {
                 {...fadeUp(0.45)}
                 style={{
                     fontFamily: "'Cinzel', serif",
-                    fontSize: 'clamp(0.72rem, 1.6vw, 0.88rem)',
-                    color: '#FFD70066',
-                    letterSpacing: '0.24em',
+                    fontSize: 'clamp(1.4rem, 3.5vw, 2rem)',
+                    color: '#FFD700',
+                    fontWeight: 700,
+                    letterSpacing: '0.15em',
                     textAlign: 'center',
-                    marginTop: -10,
+                    marginTop: '8px',
+                    textShadow: '0 0 20px rgba(255, 215, 0, 0.8)',
                 }}
             >
                 March 28, 2026
@@ -119,7 +121,7 @@ export default function HeroSection() {
                     justifyContent: 'center',
                 }}
             >
-                <MagicalButton variant="primary" onClick={() => setModal('register')}>
+                <MagicalButton variant="primary" onClick={() => window.open('https://forms.gle/TTSLjxhzKxfpLH4A6', '_blank')}>
                     ✨ Register Now
                 </MagicalButton>
                 <MagicalButton variant="secondary" onClick={() => navigate('/events')}>

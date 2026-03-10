@@ -81,8 +81,7 @@ export default function Events() {
                         letterSpacing: '0.04em',
                     }}
                 >
-                    {eventsData.departments.length} departments · {totalEvents} magical events ·{' '}
-                    <span style={{ color: '#00d4ff' }}>4 events per department</span>
+                    <span style={{ color: '#00d4ff' }}>Explore the magic</span>
                 </p>
             </motion.div>
 

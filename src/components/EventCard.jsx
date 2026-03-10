@@ -111,6 +111,7 @@ export default function EventCard({ event, index, onClick }) {
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
                         overflow: 'hidden',
+                        whiteSpace: 'pre-wrap',
                     }}
                 >
                     {event.description}

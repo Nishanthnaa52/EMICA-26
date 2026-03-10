@@ -141,10 +141,42 @@ export default function EventDetailPanel({ event, onClose }) {
                                 color: 'rgba(240, 230, 200, 0.72)',
                                 lineHeight: 1.8,
                                 margin: '0 0 32px',
+                                whiteSpace: 'pre-wrap',
                             }}
                         >
                             {event.description}
                         </p>
+
+                        {/* Tags */}
+                        {event.tags && event.tags.length > 0 && (
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    gap: '8px',
+                                    marginBottom: '32px',
+                                }}
+                            >
+                                {event.tags.map((tag) => (
+                                    <span
+                                        key={tag}
+                                        style={{
+                                            fontSize: '0.74rem',
+                                            padding: '4px 14px',
+                                            borderRadius: '14px',
+                                            backgroundColor: 'rgba(255, 215, 0, 0.07)',
+                                            color: 'rgba(255, 215, 0, 0.65)',
+                                            border: '1px solid rgba(255, 215, 0, 0.12)',
+                                            fontFamily: "'Inter', sans-serif",
+                                            fontWeight: 500,
+                                            letterSpacing: '0.03em',
+                                        }}
+                                    >
+                                        #{tag}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
 
                         {/* Info Grid */}
                         <div
@@ -243,70 +275,75 @@ export default function EventDetailPanel({ event, onClose }) {
                                 >
                                     🎓 Staff Coordinator
                                 </h4>
-                                <div
-                                    style={{
-                                        padding: '20px',
-                                        borderRadius: '18px',
-                                        backgroundColor: 'rgba(255, 215, 0, 0.04)',
-                                        border: '1px solid rgba(255, 215, 0, 0.12)',
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        gap: '10px',
-                                    }}
-                                >
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                    {(Array.isArray(event.staffCoordinator) ? event.staffCoordinator : [event.staffCoordinator]).map((staff, i) => (
                                         <div
+                                            key={i}
                                             style={{
-                                                width: '48px',
-                                                height: '48px',
-                                                borderRadius: '50%',
-                                                background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05))',
-                                                border: '1px solid rgba(255, 215, 0, 0.25)',
+                                                padding: '20px',
+                                                borderRadius: '18px',
+                                                backgroundColor: 'rgba(255, 215, 0, 0.04)',
+                                                border: '1px solid rgba(255, 215, 0, 0.12)',
                                                 display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                fontSize: '1.2rem',
-                                                flexShrink: 0,
+                                                flexDirection: 'column',
+                                                gap: '10px',
                                             }}
                                         >
-                                            🎓
-                                        </div>
-                                        <div>
-                                            <div
-                                                className="font-inter"
-                                                style={{
-                                                    fontSize: '0.95rem',
-                                                    fontWeight: 600,
-                                                    color: '#FFED8A',
-                                                    lineHeight: 1.3,
-                                                }}
-                                            >
-                                                {event.staffCoordinator.name}
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                                <div
+                                                    style={{
+                                                        width: '48px',
+                                                        height: '48px',
+                                                        borderRadius: '50%',
+                                                        background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05))',
+                                                        border: '1px solid rgba(255, 215, 0, 0.25)',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        fontSize: '1.2rem',
+                                                        flexShrink: 0,
+                                                    }}
+                                                >
+                                                    🎓
+                                                </div>
+                                                <div>
+                                                    <div
+                                                        className="font-inter"
+                                                        style={{
+                                                            fontSize: '0.95rem',
+                                                            fontWeight: 600,
+                                                            color: '#FFED8A',
+                                                            lineHeight: 1.3,
+                                                        }}
+                                                    >
+                                                        {staff.name}
+                                                    </div>
+                                                    <div
+                                                        className="font-inter"
+                                                        style={{
+                                                            fontSize: '0.78rem',
+                                                            color: 'rgba(240, 230, 200, 0.5)',
+                                                            marginTop: '2px',
+                                                        }}
+                                                    >
+                                                        {staff.designation}
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div
-                                                className="font-inter"
-                                                style={{
-                                                    fontSize: '0.78rem',
-                                                    color: 'rgba(240, 230, 200, 0.5)',
-                                                    marginTop: '2px',
-                                                }}
-                                            >
-                                                {event.staffCoordinator.designation}
-                                            </div>
+                                            {staff.phone && (
+                                                <div
+                                                    className="font-inter"
+                                                    style={{
+                                                        fontSize: '0.8rem',
+                                                        color: 'rgba(240, 230, 200, 0.55)',
+                                                        paddingLeft: '60px',
+                                                    }}
+                                                >
+                                                    📱 {staff.phone}
+                                                </div>
+                                            )}
                                         </div>
-                                    </div>
-                                    {event.staffCoordinator.phone && (
-                                        <div
-                                            className="font-inter"
-                                            style={{
-                                                fontSize: '0.8rem',
-                                                color: 'rgba(240, 230, 200, 0.55)',
-                                                paddingLeft: '60px',
-                                            }}
-                                        >
-                                            📱 {event.staffCoordinator.phone}
-                                        </div>
-                                    )}
+                                    ))}
                                 </div>
                             </div>
 
