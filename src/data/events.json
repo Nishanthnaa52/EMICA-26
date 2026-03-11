@@ -1054,7 +1054,7 @@
                     "category": "Technical",
                     "description": "Identify the components and their functions.",
                     "rules": [
-                        "2 member participation",
+                        "Individual participation",
                         "component should be identified in 1 minute.",
                         "Obsered componets should be written in paper",
                         "2 rounds",
@@ -1066,7 +1066,7 @@
                         "start": "2:00 PM",
                         "end": "3:30 PM"
                     },
-                    "teamSize": "2 Members",
+                    "teamSize": "Individual",
                     "studentCoordinators": [
                         {
                             "name": "Mohamed sheik - III ICE",
